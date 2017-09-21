@@ -50,7 +50,7 @@ p {
 
 .bar {
   background: #191919;
-  height: 36px;
+  height: 7%;
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
@@ -147,7 +147,7 @@ p {
   position: relative;
   padding: 1rem;
   overflow-y: scroll;
-  height: 100%;
+  height: 93%;
 }
 .terminal .prompt {
   color: #1ff042;
