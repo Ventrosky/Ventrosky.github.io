@@ -159,7 +159,7 @@ p {
 }
 .terminal .prompt:before {
   content: 'buccaneer@dev:~$ ';
-  display: inline-block;
+  /*display: inline-block;*/
   font-weight: bold;
 }
 .terminal .out:before {
@@ -241,6 +241,8 @@ svg {
   display: block;
   position: relative;
   text-decoration: none;
+  border-color: #323238;
+  border-style: outset;
 }
 
 .navigation a:focus::after,
