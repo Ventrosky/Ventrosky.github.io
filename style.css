@@ -210,12 +210,15 @@ color: #ff3300;
 
 .icon {
   display: inline-block;
-  fill: #BD5532;
+  fill: #7B7B7B;
   font-size: 16px;
   font-size: 1rem;
   height: 0.6em;
   vertical-align: middle;
   width: 1em;
+}
+
+  fill:  #BD5532;
 }
 
 .icon--2x {
