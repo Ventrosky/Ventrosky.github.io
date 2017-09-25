@@ -4,6 +4,10 @@ var cmdStory, cmdStoryIndex, indexH;
 var ready, input;
 
 $( document ).ready(function() {
+
+	//document.getElementsByTagName('html')[0].style.fontSize = '62.5%';
+	//document.body.style.fontSize = '1.6rem';
+
 	commands =["whoami","skills","experience","education", "contacts", "extra", "portfolio", "help"];
 	lockInter = false;
 	cmdStory = ["help"]; 
@@ -11,10 +15,11 @@ $( document ).ready(function() {
 	indexH = 0;
 	ready = true;
 	input = $('.cmd-input');
-    $.getJSON("data/info.json", function(json) {
+    $.getJSON("https://raw.githubusercontent.com/Ventrosky/Ventrosky.github.io/master/data/info.json", function(json) {
     	someData = json; 
 	});
 	initNav();
+	helpCmdsInit();
 	input.focus();
 	$('.container').on('click', function(e){
 		input.focus();
@@ -56,6 +61,14 @@ $( document ).ready(function() {
 	});
 
 });
+
+function helpCmdsInit(){
+	$(".special_command").click(function(){
+ 		$('.new-output').empty();
+ 		typeText($(this).text());
+ 		input.val($(this).text());
+	});
+};
 
 function badFormInput(){
 	var message = "Command not recognized.</br>Type 'help' for a list of commands."
