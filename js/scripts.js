@@ -75,7 +75,7 @@ function helpCmdsInit(){
 
 function wrapCmd(cmd){
 	$('.new-output').empty();
-	specCmd = "<a href=\"#\" class=\"special_command\">"+cmd+"</a>";
+	specCmd = "<a href=\"#window\" class=\"special_command\">"+cmd+"</a>";
 	$('.new-output').append(specCmd);
 	helpCmdsInit();
 };
