@@ -50,7 +50,7 @@ p {
 
 .bar {
   background: #191919;
-  height: 7%;
+  padding-bottom: 10px;
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
@@ -80,11 +80,6 @@ p {
   margin-left: 20px;
 }
 
-.body {
-  height: 10rem;
-  background: black;
-  padding: 18px;
-}
 
 @-webkit-keyframes cursor-blink {
   0% {
@@ -144,8 +139,10 @@ p {
 }
 
 .terminal {
+  background-color: black;
   position: relative;
-  padding: 1rem;
+  padding: 1em;
+  padding-bottom: 7%;
   overflow-y: scroll;
   height: 88%;
 }
@@ -242,7 +239,6 @@ svg {
   position: relative;
   text-decoration: none;
   border-color: #323238;
-  border-style: outset;
 }
 
 .navigation a:focus::after,
@@ -267,4 +263,27 @@ svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+/*small: from 0 to 600px */
+@media only screen and (max-width: 800px){
+   body {
+    font-size: 12px;
+    padding-top: 0;
+    line-height: 1;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
+  .window {
+    margin: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  p {
+    margin-bottom: 1.2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
 }
