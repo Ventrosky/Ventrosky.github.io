@@ -265,7 +265,20 @@ svg {
   display: flex;
 }
 
-/*small: from 0 to 600px */
+
+
+.terminal .prompt::after {
+  color:blue;
+}
+
+a.special_command :visited {
+    color: #f1b441;
+}
+a.special_command{
+    color: #f1b441;
+}
+
+/*small: from 0 to 800px */
 @media only screen and (max-width: 800px){
    body {
     font-size: 12px;
@@ -279,6 +292,7 @@ svg {
     margin: 0;
     margin-bottom: 1rem;
     width: 100%;
+    min-height: 340px;
   }
 
   p {
