@@ -109,11 +109,7 @@ function clearScreen(){
 };
 
 function clearScreenPolite(){
-	var input = $('.cmd-input');
-	$('.new-output').removeClass('new-output');
-	input.val('');
-	$('.terminal').empty();
-	$('.terminal').append('<div class="prompt output new-output"></div>');
+	clearScreen();
 	setTimeout(function() {
 		typeText('help');
 	},500);//100 after typing
