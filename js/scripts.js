@@ -68,12 +68,10 @@ function helpCmdsInit(){
  		timeS = ($(this).text().length + 1) * 40;
  		setTimeout(function() {
 				$('.terminal-input-form').submit();
+				jQuery('html,body').animate({ scrollTop: $('#window').offset().top - 20}, 1000);
 		},timeS);
 	});
-	jQuery('a[href^="#"]').off('click').click(function(e) {
-    	jQuery('html,body').animate({ scrollTop: $('#window').offset().top - 20}, 1000);
-    	return false;
-	});
+    	
 };
 
 function wrapCmd(cmd){
