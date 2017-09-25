@@ -240,29 +240,16 @@ svg {
 
 .navigation a {
   display: block;
-  position: relative;
+  /*position: relative;
   text-decoration: none;
-  border-color: #323238;
+  border-color: #323238;*/
 }
-
+/*
 .navigation a:focus::after,
 .navigation a:hover::after {
   opacity: 1;
 }
-
-.navigation a::after {
-    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.79);
-    content: '';
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  -webkit-transition: opacity 0.3s;
-          transition: opacity 0.3s;
-  width: 100%;
-}
-
+*/
 .navigation--inline ul {
   display: -webkit-box;
   display: -ms-flexbox;
