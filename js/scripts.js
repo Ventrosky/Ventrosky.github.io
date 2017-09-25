@@ -15,7 +15,7 @@ $( document ).ready(function() {
 	indexH = 0;
 	ready = true;
 	input = $('.cmd-input');
-    $.getJSON("data/info.json", function(json) {
+    $.getJSON("data/info.json", function(json) { //https://raw.githubusercontent.com/Ventrosky/Ventrosky.github.io/master/
     	someData = json; 
 	});
 	initNav();
@@ -75,13 +75,13 @@ function helpCmdsInit(){
 
 function wrapCmd(cmd){
 	$('.new-output').empty();
-	specCmd = "<a href=\"#window\" class=\"special_command\">"+cmd+"</a>";
+	specCmd = "<a href=\"#window\" class=\"special_command\" onclick=\"return false;\">"+cmd+"</a>";
 	$('.new-output').append(specCmd);
 	helpCmdsInit();
 };
 
 function badFormInput(){
-	var message = "Command not recognized.</br>Type <a href=\"#window\">help</a> for a list of commands."
+	var message = "Command not recognized.</br>Type <a href=\"#window\" class=\"special_command\" onclick=\"return false;\">help</a> for a list of commands."
 	var input = $('.cmd-input');
 	$('.new-output').removeClass('new-output');
 	input.val('');
