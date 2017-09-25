@@ -265,8 +265,6 @@ svg {
   display: flex;
 }
 
-
-
 .terminal .prompt::after {
   color:blue;
 }
