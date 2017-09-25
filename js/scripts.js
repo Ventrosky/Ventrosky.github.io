@@ -4,7 +4,10 @@ var cmdStory, cmdStoryIndex, indexH;
 var ready, input;
 
 $( document ).ready(function() {
-	$('.terminal').outerHeight($('.window').outerHeight() - $('.bar').outerHeight())
+	$('.terminal').outerHeight($('.window').outerHeight() - $('.bar').outerHeight());
+	window.onresize = function() {
+	    $('.terminal').outerHeight($('.window').outerHeight() - $('.bar').outerHeight());
+	};
 	commands =["whoami","skills","experience","education", "contacts", "extra", "portfolio", "help"];
 	lockInter = false;
 	cmdStory = ["help"]; 
