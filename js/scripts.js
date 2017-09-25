@@ -81,7 +81,7 @@ function wrapCmd(cmd){
 };
 
 function badFormInput(){
-	var message = "Command not recognized.</br>Type <a href=\"#\" class=\"special_command\">help</a> for a list of commands."
+	var message = "Command not recognized.</br>Type <a href=\"#window\" class=\"special_command\">help</a> for a list of commands."
 	var input = $('.cmd-input');
 	$('.new-output').removeClass('new-output');
 	input.val('');
