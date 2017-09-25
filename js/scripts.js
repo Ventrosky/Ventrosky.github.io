@@ -45,7 +45,7 @@ $( document ).ready(function() {
 				cmdStory.push(($('.cmd-input')).val());
 				cmdStoryIndex = cmdStory.length;
 				if (val === 'clear'){
-					clearScreen();
+					clearScreenPolite();
 				}else if (commands.includes(val)){
 					showCommand(val);
 				}else {
@@ -107,6 +107,21 @@ function clearScreen(){
 	$('.terminal').empty();
 	$('.terminal').append('<div class="prompt output new-output"></div>');
 };
+
+function clearScreenPolite(){
+	var input = $('.cmd-input');
+	$('.new-output').removeClass('new-output');
+	input.val('');
+	$('.terminal').empty();
+	$('.terminal').append('<div class="prompt output new-output"></div>');
+	setTimeout(function() {
+		typeText('help');
+	},500);//100 after typing
+	setTimeout(function() {
+		showCommand("help");
+    },920);
+};
+
 
 function typeText(msg){
 	$.each(msg.split(''),function(i,letter){
