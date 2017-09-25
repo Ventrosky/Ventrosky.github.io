@@ -4,10 +4,7 @@ var cmdStory, cmdStoryIndex, indexH;
 var ready, input;
 
 $( document ).ready(function() {
-
-	//document.getElementsByTagName('html')[0].style.fontSize = '62.5%';
-	//document.body.style.fontSize = '1.6rem';
-
+	$('.terminal').outerHeight($('.window').outerHeight() - $('.bar').outerHeight())
 	commands =["whoami","skills","experience","education", "contacts", "extra", "portfolio", "help"];
 	lockInter = false;
 	cmdStory = ["help"]; 
@@ -15,7 +12,7 @@ $( document ).ready(function() {
 	indexH = 0;
 	ready = true;
 	input = $('.cmd-input');
-    $.getJSON("data/info.json", function(json) {
+    $.getJSON("https://raw.githubusercontent.com/Ventrosky/Ventrosky.github.io/master/data/info.json", function(json) {
     	someData = json; 
 	});
 	initNav();
@@ -31,11 +28,9 @@ $( document ).ready(function() {
 	});
 	$(document).keyup(function(e) {
 		switch(e.which) {
-
 	        case 38:
 	        changeIdxStory(-1);
 	  		break;
-
 	        case 40:
 	        changeIdxStory(1);
 			break;
@@ -63,28 +58,45 @@ $( document ).ready(function() {
 });
 
 function helpCmdsInit(){
-	$(".special_command").click(function(){
+	$(".special_command").off('click').click(function(){
  		$('.new-output').empty();
  		typeText($(this).text());
  		input.val($(this).text());
+ 		timeS = ($(this).text().length + 1) * 40;
+ 		setTimeout(function() {
+				$('.terminal-input-form').submit();
+		},timeS);
+
 	});
 };
 
+function wrapCmd(cmd){
+	$('.new-output').empty();
+	specCmd = "<a href=\"#\" class=\"special_command\">"+cmd+"</a>";
+	$('.new-output').append(specCmd);
+	helpCmdsInit();
+};
+
 function badFormInput(){
-	var message = "Command not recognized.</br>Type 'help' for a list of commands."
+	var message = "Command not recognized.</br>Type <a href=\"#\" class=\"special_command\">help</a> for a list of commands."
 	var input = $('.cmd-input');
 	$('.new-output').removeClass('new-output');
 	input.val('');
 	$('.terminal').append('<div class="prompt out">' + message + '</div><div class="prompt output new-output"></div>');
+	helpCmdsInit();
 	scrollSmoothToBottom('term');
 }
 
 function showCommand(cmd){
 	var message = someData[cmd];
 	var input = $('.cmd-input');
+	wrapCmd(cmd);
 	$('.new-output').removeClass('new-output');
 	input.val('');
 	$('.terminal').append('<div class="prompt out">' + message + '</div><div class="prompt output new-output"></div>');
+	if (cmd=='help'){
+		helpCmdsInit();
+	};
 	scrollSmoothToBottom('term');
 }
 
