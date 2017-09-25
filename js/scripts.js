@@ -69,7 +69,10 @@ function helpCmdsInit(){
  		setTimeout(function() {
 				$('.terminal-input-form').submit();
 		},timeS);
-
+	});
+	jQuery('a[href^="#"]').off('click').click(function(e) {
+    	jQuery('html,body').animate({ scrollTop: $('#window').offset().top - 20}, 1000);
+    	return false;
 	});
 };
 
@@ -241,12 +244,3 @@ function scrollSmoothToBottom (id) {
 	}, 500);
 };
 
-jQuery('a[href^="#"]').click(function(e) {
- 
-    jQuery('html,body').animate({ scrollTop: $('#window').offset().top - 20}, 1000);
- 
-    return false;
- 
-    e.preventDefault();
- 
-});
