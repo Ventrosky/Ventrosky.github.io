@@ -218,6 +218,7 @@ color: #ff3300;
   width: 1em;
 }
 
+.nav-button:hover > .icon {
   fill:  #BD5532;
 }
 
