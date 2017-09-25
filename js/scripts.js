@@ -15,7 +15,7 @@ $( document ).ready(function() {
 	indexH = 0;
 	ready = true;
 	input = $('.cmd-input');
-    $.getJSON("data/info.json", function(json) { //https://raw.githubusercontent.com/Ventrosky/Ventrosky.github.io/master/
+    $.getJSON("https://raw.githubusercontent.com/Ventrosky/Ventrosky.github.io/master/data/info.json", function(json) { //https://raw.githubusercontent.com/Ventrosky/Ventrosky.github.io/master/
     	someData = json; 
 	});
 	initNav();
@@ -243,7 +243,7 @@ function scrollSmoothToBottom (id) {
 
 jQuery('a[href^="#"]').click(function(e) {
  
-    jQuery('html,body').animate({ scrollTop: jQuery(this.hash).offset().top}, 1000);
+    jQuery('html,body').animate({ scrollTop: $('#window').offset().top - 20}, 1000);
  
     return false;
  
