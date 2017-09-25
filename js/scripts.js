@@ -15,7 +15,7 @@ $( document ).ready(function() {
 	indexH = 0;
 	ready = true;
 	input = $('.cmd-input');
-    $.getJSON("https://raw.githubusercontent.com/Ventrosky/Ventrosky.github.io/master/data/info.json", function(json) { //https://raw.githubusercontent.com/Ventrosky/Ventrosky.github.io/master/
+    $.getJSON("data/info.json", function(json) { //https://raw.githubusercontent.com/Ventrosky/Ventrosky.github.io/master/
     	someData = json; 
 	});
 	initNav();
@@ -68,7 +68,6 @@ function helpCmdsInit(){
  		timeS = ($(this).text().length + 1) * 40;
  		setTimeout(function() {
 				$('.terminal-input-form').submit();
-				jQuery('html,body').animate({ scrollTop: $('#window').offset().top - 20}, 1000);
 		},timeS);
 	});
     	
