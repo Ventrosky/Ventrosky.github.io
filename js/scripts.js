@@ -15,7 +15,7 @@ $( document ).ready(function() {
 	indexH = 0;
 	ready = true;
 	input = $('.cmd-input');
-    $.getJSON("https://raw.githubusercontent.com/Ventrosky/Ventrosky.github.io/master/data/info.json", function(json) {
+    $.getJSON("data/info.json", function(json) {
     	someData = json; 
 	});
 	initNav();
