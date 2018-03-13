@@ -174,7 +174,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 .portfolio-item .caption .caption-content p {
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  text-shadow: -1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
 }
 @media (min-width: 992px) {
   .portfolio-item {
@@ -202,7 +204,7 @@ h1,h2,h3,h4,h5,h6 {
   clip-path: inset(2rem);
   }
   .portfolio-item:hover .caption {
-  background-color: rgba(219,214,220, 0.8);
+  background-color: rgba(69, 69, 69, 0.8);
   -webkit-clip-path: inset(2rem);
   clip-path: inset(2rem);
   }
