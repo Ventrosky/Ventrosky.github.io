@@ -71,6 +71,9 @@ h1,h2,h3,h4,h5,h6 {
 #bio {
     padding-left: 25px;
 }
+#desc{
+  margin-top:20px;
+}
 @media (min-width: 992px) {
   .masthead {
   height: 100vh;
